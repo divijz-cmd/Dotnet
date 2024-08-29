@@ -1,0 +1,40 @@
+﻿@model EmployeeManagement.Models.EmployeeDepartment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-3">
+    <h2 class="text-center">Add Employee Department</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Employee Department</h4>
+            <hr />
+
+            <form asp-action="Create">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label for="EmployeeId">Select Employee</label>
+                    <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.EmpList">
+                        <option value="">Select Employee</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="DepartmentId">Select Department</label>
+                    <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DeptList">
+                        <option value="">Select Department</option>
+                    </select>
+                </div>
+
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
